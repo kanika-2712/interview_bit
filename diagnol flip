@@ -1,0 +1,14 @@
+public class Solution {
+    public int[][] solve(int[][] A) {
+      int t;
+for (int i = 0; i < A.length; i++) {
+    for (int j = 0 ; j <i; j++) {
+        t = A[i][j];
+        A[i][j]=A[j][i];
+        A[j][i]=t;
+        
+    }
+}
+      return A;
+    }
+}
