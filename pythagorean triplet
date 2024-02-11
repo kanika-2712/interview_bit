@@ -1,0 +1,29 @@
+public class Solution {
+    public int solve(int A) {
+        
+        ArrayList<Integer> list = new ArrayList<>();
+        
+        for(int i=1;i<=A;i++){
+            list.add(i);
+        }
+        int count=0;
+        for(int i=0;i<list.size();i++){
+           for(int j=i+1;j<list.size();j++){
+              int val=(int)(Math.pow(list.get(i),2)+Math.pow(list.get(j),2));
+              int sq=(int)Math.sqrt(val);
+              if(sq * sq == val){
+                  
+              
+              if(list.contains(sq)){
+                  count++;
+              }
+              
+              }
+               
+           }
+           
+        }
+        
+         return count;
+    }
+}
