@@ -1,0 +1,28 @@
+public class Solution {
+    public int solve(String A, int B) {
+        int count=0;
+        int max=0;
+        String cmp="";
+       for(int i=0;i<=A.length()-1;i=i+B){
+           if(i+B<A.length()){
+               
+           
+            cmp=A.substring(i,i+B);
+           }else{
+             cmp=A.substring(i);
+           }
+           for(int j=0;j<cmp.length();j++){
+               if(cmp.charAt(j)=='a'){
+                   count++;
+               }
+               
+           }
+           if(count>max)
+           {
+               max=count;
+           }
+         count=0;  
+       } 
+       return max;
+    }
+}
