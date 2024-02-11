@@ -1,0 +1,17 @@
+import java.util.ArrayList;
+
+public class Solution {
+    public int solve(ArrayList<Integer> A) {
+        int count = 1;
+        int maxElement = A.get(0);
+
+        for (int i = 1; i < A.size(); i++) {
+            if (A.get(i) > maxElement) {
+                count++;
+                maxElement = A.get(i);
+            }
+        }
+
+        return count;
+    }
+}
