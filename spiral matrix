@@ -1,0 +1,51 @@
+
+
+public class Solution {
+    public ArrayList<ArrayList<Integer>> solve(ArrayList<Integer> A, int B, int C) {
+        ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
+
+        for (int i = 0; i < B; i++) {
+            matrix.add(new ArrayList<Integer>());
+            for (int j = 0; j < C; j++) {
+                matrix.get(i).add(0);
+            }
+        }
+
+        int topRow = 0;
+        int bottomRow = B - 1;
+        int leftColumn = 0;
+        int rightColumn = C - 1;
+
+        int direction = 0; 
+
+        int index = 0;
+
+        while (topRow <= bottomRow && leftColumn <= rightColumn) {
+            if (direction == 0) {
+                for (int i = leftColumn; i <= rightColumn; i++) {
+                    matrix.get(topRow).set(i, A.get(index++));
+                }
+                topRow++;
+            } else if (direction == 1) {
+                for (int i = topRow; i <= bottomRow; i++) {
+                    matrix.get(i).set(rightColumn, A.get(index++));
+                }
+                rightColumn--;
+            } else if (direction == 2) {
+                for (int i = rightColumn; i >= leftColumn; i--) {
+                    matrix.get(bottomRow).set(i, A.get(index++));
+                }
+                bottomRow--;
+            } else if (direction == 3) {
+                for (int i = bottomRow; i >= topRow; i--) {
+                    matrix.get(i).set(leftColumn, A.get(index++));
+                }
+                leftColumn++;
+            }
+
+            direction = (direction + 1) % 4;
+        }
+
+        return matrix;
+    }
+}
