@@ -1,0 +1,14 @@
+public class Solution {
+    public Long solve(int A, int B) {
+       
+        long firstMultiple = (A % 7 == 0) ? A : A + (7 - A % 7);
+        
+        long lastMultiple = B - B % 7;
+    
+        long numberOfMultiples = (lastMultiple - firstMultiple) / 7 + 1;
+     
+        long sum = numberOfMultiples * (firstMultiple + lastMultiple) / 2;
+        
+        return sum;
+    }
+}
