@@ -1,0 +1,22 @@
+import java.util.*;
+
+public class Solution {
+    // DO NOT MODIFY THE LIST
+    public int repeatedNumber(final List<Integer> a) {
+        int n = a.size() / 3;
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+       
+        
+        for (int num : a) {
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+        }
+        
+        for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
+            if (entry.getValue() > n) {
+                return entry.getKey();
+            }
+        }
+        
+        return -1;
+    }
+}
