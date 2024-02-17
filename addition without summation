@@ -1,0 +1,13 @@
+public class Solution {
+    public int addNumbers(int A, int B) {
+        int res= (A&B)<<1;
+        int sol=A^B;
+        
+        if(res==0){
+            return sol;
+        }
+        
+        return addNumbers(res,sol);
+        
+    }
+}
