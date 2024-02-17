@@ -1,0 +1,39 @@
+public class Solution {
+    public int solve(ArrayList<Integer> A, int B) {
+     
+        
+        int max=0;
+        int add=0;
+       for(int i=0;i<B;i++){
+           max=max+A.get(i);
+       }
+       for(int i=0;i<=A.size()-B;i++){
+           int temp=A.get(A.size()-1);
+            A.set(B,temp);
+           A.remove(A.size()-1);
+           
+           
+           
+           for(int j=0;j<B;j++){
+               add=add+A.get(j);
+           }
+           if(add>max){
+               max=add;
+               add=0;
+           }
+           
+           
+       }
+       return max;
+       
+       
+       
+    }
+}
+
+        
+        
+        
+        
+        
+ 
