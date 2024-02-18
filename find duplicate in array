@@ -1,0 +1,18 @@
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public int repeatedNumber(final List<Integer> A) {
+        Collections.sort(A);
+        int res=0;
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int i:A){
+            map.put(i,map.getOrDefault(i,0)+1);
+        }
+        for(int i:A){
+            if(map.get(i)>1){
+                res=i;
+                break;
+            }
+        }
+       return res; 
+    }
+}
