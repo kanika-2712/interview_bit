@@ -1,0 +1,25 @@
+public class Solution {
+    public int solve(int target) {
+       
+        if (target == 0) {
+            return 0;
+        }
+        
+        target = Math.abs(target); 
+        
+        int moves = 0;
+        int totalSteps = 0;
+        
+        while (true) {
+            moves++;
+            totalSteps += moves;
+            
+            if (totalSteps >= target && (totalSteps - target) % 2 == 0) {
+                return moves;
+            }
+        }
+    }
+
+    
+  
+}
