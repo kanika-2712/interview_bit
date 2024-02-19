@@ -1,0 +1,43 @@
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public ArrayList<Integer> repeatedNumber(final List<Integer> A) {
+        
+        ArrayList<Integer> list = new ArrayList<>();
+        HashMap<Integer,Integer> map = new HashMap<>();
+        
+        for(int i=0;i<A.size();i++){
+            map.put(A.get(i),map.getOrDefault(A.get(i),0)+1);
+        }
+        
+        int max=Integer.MIN_VALUE;
+        int min=Integer.MAX_VALUE;
+        for( int i:map.keySet()){
+            if(i<min){
+                min=i;
+            }
+            if(i>max){
+                max=i;
+            }
+            
+        }
+        int miss=0;
+        int twice=0;
+        for(int i=1;i<=A.size();i++){
+            if(!map.containsKey(i)){
+                miss=i;
+            }
+            
+            if (map.getOrDefault(i, 0) == 2) {
+                twice = i;
+            }
+            
+        }
+        
+        list.add(twice);
+        list.add(miss);
+        return list;
+        
+        
+    }
+}
+
