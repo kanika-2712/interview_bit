@@ -1,0 +1,16 @@
+public class Solution {
+    public int isPalindrome(int A) {
+        int temp=A;
+        int rev=0;
+        while(A>0){
+            int rem=A%10;
+            rev=rev*10+rem;
+            A=A/10;
+        }
+        if(temp==rev){
+            return 1;
+        }
+        return 0;
+        
+    }
+}
