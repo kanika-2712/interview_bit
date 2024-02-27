@@ -1,0 +1,23 @@
+public class Solution {
+    public int reverse(int A) {
+        long rev=0;
+        // int minn =Integer.MIN_VALUE;
+        // int maxx =Integer.MAX_VALUE;
+        
+            while(A!=0){
+                 
+                int rem=A%10;
+                rev=rev*10+rem;
+                 A=A/10;
+                
+            }
+            if(rev>Integer.MAX_VALUE || rev<Integer.MIN_VALUE){
+                return 0;
+            }
+            
+                
+    
+        return (int)rev;
+        
+    }
+}
