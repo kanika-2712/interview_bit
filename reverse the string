@@ -1,0 +1,16 @@
+public class Solution {
+    public String solve(String A) {
+        String[] words = A.split("\\s+"); // Split the string into words using whitespace as delimiter
+        StringBuilder reversedString = new StringBuilder();
+        
+        // Iterate through the words array in reverse order
+        for (int i = words.length - 1; i >= 0; i--) {
+            reversedString.append(words[i]); // Append each word to the reversed string
+            if (i > 0) {
+                reversedString.append(" "); // Append a single space if it's not the last word
+            }
+        }
+        
+        return reversedString.toString().trim(); // Return the reversed string
+    }
+}
